@@ -4,7 +4,7 @@ require_relative "lib/ruby_bol_api/version"
 
 Gem::Specification.new do |spec|
   spec.name = "ruby_bol_api"
-  spec.version = RubyBolApi::VERSION
+  spec.version = RubyBolAPI::VERSION
   spec.authors = ["Khalil Gharbaoui"]
   spec.email = ["kaygeee@gmail.com"]
 

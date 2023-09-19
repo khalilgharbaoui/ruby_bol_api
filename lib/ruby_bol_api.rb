@@ -2,7 +2,7 @@
 
 require_relative "ruby_bol_api/version"
 
-module RubyBolApi
+module RubyBolAPI
   class Error < StandardError; end
   # Your code goes here...
 end
