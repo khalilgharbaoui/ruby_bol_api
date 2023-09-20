@@ -1,3 +1,4 @@
+require "logger"
 module RubyBolAPI
   class Configuration
     attr_accessor :seller_client_id, :seller_client_secret, :base_url,
