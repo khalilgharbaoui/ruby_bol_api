@@ -7,4 +7,11 @@ require_relative "ruby_bol_api/client"
 require_relative "ruby_bol_api/error"
 
 module RubyBolAPI
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.configure
+    yield(configuration)
+  end
 end
