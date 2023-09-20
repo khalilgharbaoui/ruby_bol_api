@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     ruby_bol_api (0.1.0)
+      base64
       logger
       zache
 
