@@ -28,14 +28,13 @@ module RubyBolAPI
                    @cache.get(:cached_api_response)
                  else
                    # cache the response in memory with a default lifetime
-                   @cache.get(:cached_api_response, lifetime: 599) do
+                   result = @cache.get(:cached_api_response, lifetime: 599) do
                      Faraday.new(auth_url) do |builder|
                        builder.headers = headers
                        builder.request :json
                        builder.response :json, parser_options: { symbolize_names: true }
                      end.post
                    end
-                   result = @cache.get(:cached_api_response)
                    # overwrite cache lifetime from response result & return response
                    @cache.put(
                      :cached_api_response,
