@@ -1,3 +1,5 @@
+require "faraday"
+
 module RubyBolAPI
   module Client
     def self.get(endpoint, options = {})
