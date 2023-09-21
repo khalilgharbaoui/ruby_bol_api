@@ -5,6 +5,7 @@ require_relative "ruby_bol_api/configuration"
 require_relative "ruby_bol_api/authentication"
 require_relative "ruby_bol_api/client"
 require_relative "ruby_bol_api/error"
+require 'zache'
 
 module RubyBolAPI
   def self.configuration
@@ -13,5 +14,9 @@ module RubyBolAPI
 
   def self.configure
     yield(configuration)
+  end
+
+  def self.cache
+    @cache ||= Zache.new
   end
 end
