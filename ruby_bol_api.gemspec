@@ -34,7 +34,10 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "base64"
   spec.add_dependency "zache"
+  spec.add_dependency "faraday"
   spec.add_dependency "logger"
+
+  spec.add_development_dependency "pry"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
