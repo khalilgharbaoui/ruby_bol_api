@@ -1,4 +1,6 @@
 require "faraday"
+require 'faraday/retry'
+require 'faraday/follow_redirects'
 
 module RubyBolAPI
   module Client
@@ -16,10 +18,11 @@ module RubyBolAPI
 
     def self.connection(endpoint, options = {})
       default_headers = {
-        "Content-Type:" => "application/vnd.retailer.V9+json",
-        "Accept:" => "application/vnd.retailer.V9+json",
-        "Authorization:" => "Bearer #{Authentication.new.auth_token}"
+        "Content-Type" => "application/vnd.retailer.v9+json",
+        "Accept" => "application/vnd.retailer.v9+json",
+        "Authorization" => "Bearer #{Authentication.new.auth_token}"
       }
+      endpoint = RubyBolAPI.configuration.base_url + endpoint
       Faraday.new(endpoint) do |builder|
         builder.headers = options[:headers] || default_headers
         builder.options.timeout = 10

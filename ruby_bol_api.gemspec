@@ -35,6 +35,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "base64"
   spec.add_dependency "zache"
   spec.add_dependency "faraday"
+  spec.add_dependency "faraday-retry"
+  spec.add_dependency "faraday-follow_redirects"
   spec.add_dependency "logger"
 
   spec.add_development_dependency "pry"
