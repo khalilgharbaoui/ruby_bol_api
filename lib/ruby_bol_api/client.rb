@@ -17,9 +17,10 @@ module RubyBolAPI
     end
 
     def self.connection(endpoint, options = {})
+      api_version = RubyBolAPI.configuration.api_version
       default_headers = {
-        "Content-Type" => "application/vnd.retailer.v9+json",
-        "Accept" => "application/vnd.retailer.v9+json",
+        "Content-Type" => "application/vnd.retailer.#{api_version}+json",
+        "Accept" => "application/vnd.retailer.#{api_version}+json",
         "Authorization" => "Bearer #{Authentication.new.auth_token}"
       }
       endpoint = RubyBolAPI.configuration.base_url + endpoint
